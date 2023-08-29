@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Zagruzchik LANGUAGES CXX)
+project(Zagruzchik_A01 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -27,23 +27,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 if(ANDROID)
-  add_library(Zagruzchik SHARED
+  add_library(Zagruzchik_A01 SHARED
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    element.cpp
-    element.h
+    zagruzchik.cpp
+    zagruzchik.h
+    zagruzchik.ui
   )
 else()
-  add_executable(Zagruzchik
+  add_executable(Zagruzchik_A01
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    element.cpp
-    element.h
-  )
+    zagruzchik.cpp
+    zagruzchik.h
+    zagruzchik.ui
+    )
 endif()
 
-target_link_libraries(Zagruzchik PRIVATE Qt5::Widgets)
+target_link_libraries(Zagruzchik_A01 PRIVATE Qt5::Widgets)
